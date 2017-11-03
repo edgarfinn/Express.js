@@ -1,8 +1,8 @@
 # Express.js
 A quick guide to using express.js
 
-### Basic Setup
-
+Basic Setup
+---
 
 **Command line:**
 ```bash

@@ -83,7 +83,7 @@ app.get('/about', function(req,res){
 })
 ```
 
-In the above example, any stylesheets within the public folder will still be read also, so long as they are called / linked in the ```about.html``` file. **HOWEVER**, this means that about/index.html and home/index.html both need to share the SAME supporting files (ie index.css and any supporting JS files). In many cases it is better to separate out different endpoint requests within multiple incidences of ```express.static```, and create a separate directory for all supporting files like so:
+In the above example, any stylesheets within the public folder will still be read also, so long as they are called / linked in the ```about.html``` file. **HOWEVER**, in some cases you may wish to separate out different endpoint requests within multiple incidences of ```express.static```, and create a separate directory for all supporting files like so:
 
 ** Your app file structure: **
 

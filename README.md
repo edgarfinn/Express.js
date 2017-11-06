@@ -48,6 +48,7 @@ If you files are structured into separate folders, its best to expose the ``` pa
 **Your app file structure: **
 
 src/
+
   /app.js
 
 ```js

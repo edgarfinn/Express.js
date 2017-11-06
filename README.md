@@ -36,20 +36,10 @@ app.listen(3000, function() {
 
 ```
 
-Serving Static Files (such as HTML, CSS and client-side javascript)
+Serving Static Files
 ---
 
-#### Can be done using either:
-
-##### The __```express.static```__ middleware function
-
-#### OR
-
-##### The __```res.sendFile()```__ method
-
-```express.static```
-
-```res.sendFile()```
+``` express.static ``` is a built-in middleware function in express based on the ``` serve-static ``` node module, used for serving static files (such as HTML, CSS and client-side javascript)
 
 
 Resources

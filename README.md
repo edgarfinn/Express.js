@@ -81,7 +81,37 @@ app.get('/about', function(req,res){
 })
 ```
 
-In the above example, any stylesheets within the public folder will still be read also, so long as they are called / linked in the ```about.html``` file.
+In the above example, any stylesheets within the public folder will still be read also, so long as they are called / linked in the ```about.html``` file. **HOWEVER**, this means that about/index.html and home/index.html both need to share the SAME supporting files (ie index.css and any supporting JS files). In many cases it is better to separate out different endpoint requests within multiple incidences of ```express.static```, and create a separate directory for all supporting files like so:
+
+** Your app file structure: **
+
+public/
+
+  /about/
+
+  - index.html
+  - styles/
+    - index.css
+
+
+  /home/
+
+  - index.html
+  - styles/
+    - index.css
+
+src/
+
+  - app.js
+
+```js
+app.use('/', express.static(path.join(__dirname, '../public/home')));
+app.use('/about', express.static(path.join(__dirname, '../public/about')));
+```
+
+You can then set up separate directories for the 'about' page html, css and javascript under the 'public/about' directory (eg 'public/about/styles/about.css')
+
+This is generally preferable over using the res.sendFile() method because ```express.static``` sets the [ETag](https://en.wikipedia.org/wiki/HTTP_ETag) for you, and allows you to set file extension fallbacks (eg ['html', 'htm'])
 
 To link a particular path prefix (such as 'localhost:3000/**about**'), you can specify a given path (ie 'about') to a particular file directory like so:
 

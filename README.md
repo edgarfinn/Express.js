@@ -36,16 +36,16 @@ app.listen(3000, function() {
 
 ```
 
-Serving Static Files
+**Serving Static Files**
 ---
 
 ``` express.static ``` is a built-in middleware function in express based on the ``` serve-static ``` node module, used for serving static files (such as HTML, CSS and client-side javascript)
 
-**Basic setup:**
+** Basic setup: **
 
 If your files are structured into separate folders (such as below), its best to expose the ``` path ``` node module, and use the ``` path.join() ``` method for binding filepaths.
 
-**Your app file structure: **
+** Your app file structure: **
 
 public/
 
@@ -59,7 +59,7 @@ src/
   - app.js
 
 
-** app.js: **
+**app.js:**
 ```js
 
 const path = require('path');
@@ -81,7 +81,7 @@ app.get('/about', function(req,res){
 })
 ```
 
-In the above example, any stylesheets within the public folder will still be read also, so long as they are called / linked in the ```about.html``` file. 
+In the above example, any stylesheets within the public folder will still be read also, so long as they are called / linked in the ```about.html``` file.
 
 To link a particular path prefix (such as 'localhost:3000/**about**'), you can specify a given path (ie 'about') to a particular file directory like so:
 

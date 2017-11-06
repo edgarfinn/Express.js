@@ -43,15 +43,25 @@ Serving Static Files
 
 **Basic setup:**
 
-If you files are structured into separate folders, its best to expose the ``` path ``` node module for binding filepaths:
+If your files are structured into separate folders (such as below), its best to expose the ``` path ``` node module, and use the ``` path.join() ``` method for binding filepaths.
 
 **Your app file structure: **
 
+public/
+
+  - index.html
+  - styles/
+    - index.css
+
+
 src/
 
-  /app.js
+  - app.js
 
+
+** app.js: **
 ```js
+
 const path = require('path');
 
 // basic setup for express.static:
@@ -59,7 +69,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 ```
 
-Once set-up
+Once set-up, assuming your index.html file links to the css file, when serving up the index.html file, express will also know to use the css file, and any other **linked** static files (including images and javascript) within the public folder
 
 
 Resources

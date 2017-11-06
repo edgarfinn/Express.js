@@ -41,11 +41,13 @@ app.listen(3000, function() {
 
 ``` express.static ``` is a built-in middleware function in express based on the ``` serve-static ``` node module, used for serving static files (such as HTML, CSS and client-side javascript)
 
-** Basic setup: **
+**Basic setup:**
+
 
 If your files are structured into separate folders (such as below), its best to expose the ``` path ``` node module, and use the ``` path.join() ``` method for binding filepaths.
 
-** Your app file structure: **
+**Your app file structure:**
+
 
 public/
 
